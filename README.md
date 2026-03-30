@@ -1,6 +1,6 @@
 # IceKream Bucket by kud3n
 
-[![Tests](https://github.com/kud3n/icekream-bucket/actions/workflows/ci.yml/badge.svg)](https://github.com/kud3n/icekream-bucket/actions/workflows/ci.yml) [![Excavator](https://github.com/kud3n/icekream-bucket/actions/workflows/excavator.yml/badge.svg)](https://github.com/kud3n/icekream-bucket/actions/workflows/excavator.yml)
+[![Tests](https://github.com/kud3n013/icekream/actions/workflows/ci.yml/badge.svg)](https://github.com/kud3n013/icekream/actions/workflows/ci.yml) [![Excavator](https://github.com/kud3n013/icekream/actions/workflows/excavator.yml/badge.svg)](https://github.com/kud3n013/icekream/actions/workflows/excavator.yml)
 
 Template bucket for [Scoop](https://scoop.sh), the Windows command-line installer.
 
