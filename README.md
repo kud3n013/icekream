@@ -1,4 +1,4 @@
-# IceKream Bucket by kud3n
+# IceKream Bucket 🍨 by kud3n 
 
 [![Tests](https://github.com/kud3n013/icekream/actions/workflows/ci.yml/badge.svg)](https://github.com/kud3n013/icekream/actions/workflows/ci.yml) [![Excavator](https://github.com/kud3n013/icekream/actions/workflows/excavator.yml/badge.svg)](https://github.com/kud3n013/icekream/actions/workflows/excavator.yml)
 
