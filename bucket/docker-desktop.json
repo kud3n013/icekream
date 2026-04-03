@@ -13,7 +13,7 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe",
+            "url": "https://desktop.docker.com/win/main/amd64/222858/Docker%20Desktop%20Installer.exe",
             "pre_install": [
                 "if(is_admin) {",
                 "    if((Get-WindowsOptionalFeature -FeatureName Microsoft-Hyper-V-All -Online).State -eq 'Disabled') {",
