@@ -9,6 +9,7 @@ Template bucket for [Scoop](https://scoop.sh), the Windows command-line installe
 - [Unikey](https://unikey.org/en)
 - [Zalo](https://zalo.me/en/product/zalo)
 - [Canva Desktop](https://www.canva.com)
+- [Attack Shark X6](https://www.attackshark.pro)
 
 ## How do I install these manifests?
 
@@ -19,5 +20,6 @@ scoop bucket add kud3n013_icekream https://github.com/kud3n013/icekream
 scoop install kud3n013_icekream/unikey
 scoop install kud3n013_icekream/zalo
 scoop install kud3n013_icekream/canva
+scoop install kud3n013_icekream/attackshark-x6
 ```
 
