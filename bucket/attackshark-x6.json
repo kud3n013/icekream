@@ -3,12 +3,15 @@
     "description": "Attack Shark X6 mouse configuration software",
     "homepage": "https://www.attackshark.pro",
     "license": "Proprietary",
+    "depends": "innoextract",
     "url": "https://download.attackshark.pro/ATTACKSHARK/X6/ATTACKSHARKX6.zip",
     "hash": "4825cf3b69ba6ce679ea87b7cc465ac063178deef4ad19c39ffe9657e792071e",
     "pre_install": [
-        "Expand-InnoArchive \"$dir\\ATTACK SHARK X6 SOFT.exe\" \"$dir\" -ExtractDir 'app'",
-        "Remove-Item \"$dir\\ATTACK SHARK X6 SOFT.exe\" -Force"
+        "innoextract -e -d \"$dir\" \"$dir\\ATTACK SHARK X6 SOFT.exe\" --silent 2>&1 | Out-Null",
+        "Move-Item \"$dir\\app\\*\" \"$dir\" -Force",
+        "Remove-Item \"$dir\\app\", \"$dir\\ATTACK SHARK X6 SOFT.exe\" -Recurse -Force"
     ],
+    "persist": "Data",
     "shortcuts": [
         [
             "X6.exe",
