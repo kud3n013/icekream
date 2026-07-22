@@ -1,0 +1,24 @@
+{
+    "version": "1.122.0",
+    "description": "Canva Desktop. Design platform for creating presentations, social media graphics, videos, and more.",
+    "homepage": "https://www.canva.com",
+    "license": "Proprietary",
+    "url": "https://desktop-release.canva.com/Canva%20Setup%201.122.0.exe#/dl.7z",
+    "hash": "fa0dec6c910cfa9944062f649671bb8b8293d79acc4d888578f4bd23e9446c92",
+    "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
+    "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\Uninstall Canva.exe\" -Recurse -Force",
+    "shortcuts": [
+        [
+            "Canva.exe",
+            "Canva"
+        ]
+    ],
+    "post_uninstall": "Remove-Item \"$env:APPDATA\\Microsoft\\Windows\\Start Menu\\Programs\\Canva.lnk\" -ErrorAction SilentlyContinue",
+    "checkver": {
+        "url": "https://desktop-release.canva.com/latest.yml",
+        "regex": "version: ([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://desktop-release.canva.com/Canva%20Setup%20$version.exe#/dl.7z"
+    }
+}
