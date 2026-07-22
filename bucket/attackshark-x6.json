@@ -1,25 +1,17 @@
 {
     "version": "1.1",
-    "description": "Attack Shark X6 mouse driver and configuration software",
+    "description": "Attack Shark X6 mouse configuration software",
     "homepage": "https://www.attackshark.pro",
     "license": "Proprietary",
     "url": "https://download.attackshark.pro/ATTACKSHARK/X6/ATTACKSHARKX6.zip",
     "hash": "4825cf3b69ba6ce679ea87b7cc465ac063178deef4ad19c39ffe9657e792071e",
-    "pre_install": "Rename-Item \"$dir\\ATTACK SHARK X6 SOFT.exe\" \"$dir\\AttackSharkX6Setup.exe\"",
-    "installer": {
-        "script": [
-            "Start-Process -FilePath \"$dir\\AttackSharkX6Setup.exe\" -ArgumentList '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-' -Wait -Verb RunAs"
-        ]
-    },
-    "uninstaller": {
-        "script": [
-            "$uninstaller = Get-ChildItem \"$env:ProgramFiles\\Attack*SharkX6*\" -Filter 'unins000.exe' -Recurse -ErrorAction SilentlyContinue | Select-Object -First 1",
-            "if ($uninstaller) { Start-Process -FilePath $uninstaller.FullName -ArgumentList '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART' -Wait -Verb RunAs }"
-        ]
-    },
+    "pre_install": [
+        "Expand-InnoArchive \"$dir\\ATTACK SHARK X6 SOFT.exe\" \"$dir\" -ExtractDir 'app'",
+        "Remove-Item \"$dir\\ATTACK SHARK X6 SOFT.exe\" -Force"
+    ],
     "shortcuts": [
         [
-            "AttackSharkX6Setup.exe",
+            "X6.exe",
             "Attack Shark X6"
         ]
     ]
