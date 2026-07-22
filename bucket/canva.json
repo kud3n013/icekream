@@ -6,7 +6,7 @@
     "url": "https://desktop-release.canva.com/Canva%20Setup%201.122.0.exe#/dl.7z",
     "hash": "fa0dec6c910cfa9944062f649671bb8b8293d79acc4d888578f4bd23e9446c92",
     "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
-    "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\Uninstall Canva.exe\" -Recurse -Force",
+    "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$R0\" -Recurse -Force",
     "shortcuts": [
         [
             "Canva.exe",
