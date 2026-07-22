@@ -6,10 +6,12 @@ Template bucket for [Scoop](https://scoop.sh), the Windows command-line installe
 
 ## What apps are included?
 
-- [Unikey](https://unikey.org/en)
-- [Zalo](https://zalo.me/en/product/zalo)
-- [Canva Desktop](https://www.canva.com)
-- [Attack Shark X6](https://www.attackshark.pro)
+| Application | Manifest | Auto-Update | Description |
+|---|---|---|---|
+| [UniKey](https://unikey.org/en) | `unikey` | ⚡ Yes | Vietnamese input method editor |
+| [Zalo](https://zalo.me/en/product/zalo) | `zalo` | ⚡ Yes | Desktop messaging application |
+| [Canva Desktop](https://www.canva.com) | `canva` | ⚡ Yes | Graphic design & presentation platform |
+| [Attack Shark X6](https://www.attackshark.pro) | `attackshark-x6` | 🛠️ Manual | Mouse configuration software |
 
 ## How do I install these manifests?
 
