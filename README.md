@@ -16,7 +16,7 @@ Template bucket for [Scoop](https://scoop.sh), the Windows command-line installe
 After manifests have been committed and pushed, run the following:
 
 ```pwsh
-scoop bucket add kud3n013_icekream https://github.com/kud3n/icekream-bucket
+scoop bucket add kud3n013_icekream https://github.com/kud3n013/icekream
 scoop install kud3n013_icekream/unikey
 scoop install kud3n013_icekream/zalo
 scoop install kud3n013_icekream/docker-desktop
