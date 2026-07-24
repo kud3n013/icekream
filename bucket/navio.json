@@ -4,7 +4,7 @@
     "homepage": "https://www.macmillaneducationeverywhere.com",
     "license": "Proprietary",
     "url": "https://api.mee.macmillaneducation.com/acecoreapi/api/v1/utility/downloadapp?environmentId=AmazonS3NavioWindowsApp&appType=Navio#/dl.7z",
-    "hash": "f15b9cfde1a4fe193cd5c678a3cbb5b035dd2fe8c326eebf22d4fdfa7f8045ca",
+    "hash": "4c1182aa87a0174113578df41cdc298580bf024585dfda9b473d69e40ff255d9",
     "installer": {
         "args": [
             "/S",
