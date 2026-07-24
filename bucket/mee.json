@@ -1,0 +1,20 @@
+{
+    "version": "3.0.0",
+    "description": "Macmillan Education Everywhere platform for accessing digital teaching and learning tools.",
+    "homepage": "https://www.macmillaneducationeverywhere.com",
+    "license": "Proprietary",
+    "url": "https://api.mee.macmillaneducation.com/acecoreapi/api/v1/utility/downloadapp?environmentId=MEEPlatformWin64_App&appType=MEEPlatform#/setup.exe",
+    "hash": "229a13f3983a58acdf220b8d3cf41a366576f6f40932d6acae6a5e3ff51e761a",
+    "installer": {
+        "args": [
+            "/S",
+            "/D=$dir"
+        ]
+    },
+    "shortcuts": [
+        [
+            "Macmillan Education Everywhere.exe",
+            "Macmillan Education Everywhere"
+        ]
+    ]
+}

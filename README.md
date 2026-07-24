@@ -12,6 +12,7 @@ Template bucket for [Scoop](https://scoop.sh), the Windows command-line installe
 | [Zalo](https://zalo.me/en/product/zalo) | `zalo` | ⚡ Yes | Desktop messaging application |
 | [Canva Desktop](https://www.canva.com) | `canva` | ⚡ Yes | Graphic design & presentation platform |
 | [Attack Shark X6](https://www.attackshark.pro) | `attackshark-x6` | 🛠️ Manual | Mouse configuration software |
+| [Macmillan Education Everywhere](https://www.macmillaneducationeverywhere.com) | `mee` | 🛠️ Manual | Digital teaching and learning platform |
 
 ## How do I install these manifests?
 
@@ -23,5 +24,6 @@ scoop install kud3n013_icekream/unikey
 scoop install kud3n013_icekream/zalo
 scoop install kud3n013_icekream/canva
 scoop install kud3n013_icekream/attackshark-x6
+scoop install kud3n013_icekream/mee
 ```
 
