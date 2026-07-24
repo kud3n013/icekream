@@ -1,0 +1,22 @@
+{
+    "version": "2.15.5998",
+    "description": "Navio platform by Macmillan Education for interactive learning experiences.",
+    "homepage": "https://www.macmillaneducationeverywhere.com",
+    "license": "Proprietary",
+    "url": "https://api.mee.macmillaneducation.com/acecoreapi/api/v1/utility/downloadapp?environmentId=AmazonS3NavioWindowsApp&appType=Navio#/dl.7z",
+    "hash": "f15b9cfde1a4fe193cd5c678a3cbb5b035dd2fe8c326eebf22d4fdfa7f8045ca",
+    "installer": {
+        "args": [
+            "/S",
+            "/D=$dir"
+        ]
+    },
+    "post_install": "Remove-Item \"$dir\\Navio Setup.exe\" -Force -ErrorAction SilentlyContinue",
+    "shortcuts": [
+        [
+            "Navio.exe",
+            "Navio"
+        ]
+    ],
+    "notes": "If aria2 download fails due to 'Invalid range header', temporarily disable aria2 by running: scoop config aria2-enabled false"
+}
