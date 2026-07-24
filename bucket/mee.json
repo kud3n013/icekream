@@ -3,18 +3,19 @@
     "description": "Macmillan Education Everywhere platform for accessing digital teaching and learning tools.",
     "homepage": "https://www.macmillaneducationeverywhere.com",
     "license": "Proprietary",
-    "url": "https://api.mee.macmillaneducation.com/acecoreapi/api/v1/utility/downloadapp?environmentId=MEEPlatformWin64_App&appType=MEEPlatform#/setup.exe",
+    "depends": "innoextract",
+    "url": "https://api.mee.macmillaneducation.com/acecoreapi/api/v1/utility/downloadapp?environmentId=MEEPlatformWin64_App&appType=MEEPlatform#/dl.7z",
     "hash": "229a13f3983a58acdf220b8d3cf41a366576f6f40932d6acae6a5e3ff51e761a",
-    "installer": {
-        "args": [
-            "/S",
-            "/D=$dir"
-        ]
-    },
+    "pre_install": [
+        "innoextract -e -d \"$dir\" \"$dir\\MEEPlatform-win32-x64.exe\" --silent 2>&1 | Out-Null",
+        "Move-Item \"$dir\\app\\*\" \"$dir\" -Force",
+        "Remove-Item \"$dir\\app\", \"$dir\\MEEPlatform-win32-x64.exe\" -Recurse -Force"
+    ],
     "shortcuts": [
         [
-            "Macmillan Education Everywhere.exe",
+            "MEEPlatform.exe",
             "Macmillan Education Everywhere"
         ]
-    ]
+    ],
+    "notes": "If aria2 download fails due to 'Invalid range header', temporarily disable aria2 by running: scoop config aria2-enabled false"
 }
