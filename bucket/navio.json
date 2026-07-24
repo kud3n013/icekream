@@ -3,16 +3,14 @@
     "description": "Navio platform by Macmillan Education for interactive learning experiences.",
     "homepage": "https://www.macmillaneducationeverywhere.com",
     "license": "Proprietary",
+    "depends": "innoextract",
     "url": "https://api.mee.macmillaneducation.com/acecoreapi/api/v1/utility/downloadapp?environmentId=AmazonS3NavioWindowsApp&appType=Navio#/dl.7z",
     "hash": "4c1182aa87a0174113578df41cdc298580bf024585dfda9b473d69e40ff255d9",
-    "installer": {
-        "file": "Navio Setup.exe",
-        "args": [
-            "/S",
-            "/D=$dir"
-        ]
-    },
-    "post_install": "Remove-Item \"$dir\\Navio Setup.exe\" -Force -ErrorAction SilentlyContinue",
+    "pre_install": [
+        "innoextract -e -d \"$dir\" \"$dir\\Navio Setup.exe\" --silent 2>&1 | Out-Null",
+        "Move-Item \"$dir\\app\\*\" \"$dir\" -Force",
+        "Remove-Item \"$dir\\app\", \"$dir\\Navio Setup.exe\" -Recurse -Force"
+    ],
     "shortcuts": [
         [
             "Navio.exe",
