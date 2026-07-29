@@ -1,10 +1,10 @@
 {
-    "version": "1.123.0",
+    "version": "1.123.1",
     "description": "Canva Desktop. Design platform for creating presentations, social media graphics, videos, and more.",
     "homepage": "https://www.canva.com",
     "license": "Proprietary",
-    "url": "https://desktop-release.canva.com/Canva%20Setup%201.123.0.exe#/dl.7z",
-    "hash": "0ef96d5ec6d08f2adea6fb547c87bb38625ca93e9115dbd3ba965cf43d5f9ab5",
+    "url": "https://desktop-release.canva.com/Canva%20Setup%201.123.1.exe#/dl.7z",
+    "hash": "e7851e3f4656075bc61f5fb5a9b1c22fa2acb3a8038f7fbada118bf6c6b33710",
     "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
     "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$R0\" -Recurse -Force",
     "shortcuts": [
