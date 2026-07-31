@@ -1,0 +1,39 @@
+{
+    "version": "4.84.0",
+    "description": "Docker Desktop for Windows. Easy-to-install application for building and sharing containerized applications and microservices (all-users / non-portable installation).",
+    "homepage": "https://www.docker.com/products/docker-desktop/",
+    "license": "Proprietary",
+    "notes": "Docker Desktop requires WSL 2 or Hyper-V enabled on Windows and administrative privileges for system-wide installation.",
+    "architecture": {
+        "64bit": {
+            "url": "https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe#/installer.exe",
+            "hash": "fe54164c1ceb9e2004137e22e4013826baccf2352c1cedb27e8daa8e56230dd7"
+        }
+    },
+    "installer": {
+        "file": "installer.exe",
+        "args": [
+            "install",
+            "--quiet",
+            "--accept-license"
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "if (Test-Path \"$env:ProgramFiles\\Docker\\Docker\\Docker Desktop Installer.exe\") {",
+            "    Start-Process \"$env:ProgramFiles\\Docker\\Docker\\Docker Desktop Installer.exe\" -ArgumentList 'uninstall', '--quiet' -Wait",
+            "}"
+        ]
+    },
+    "checkver": {
+        "url": "https://docs.docker.com/desktop/release-notes.md",
+        "regex": "## ([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe#/installer.exe"
+            }
+        }
+    }
+}
