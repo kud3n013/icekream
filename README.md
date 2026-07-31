@@ -14,6 +14,7 @@ Template bucket for [Scoop](https://scoop.sh), the Windows command-line installe
 | [Attack Shark X6](https://www.attackshark.pro) | `attackshark-x6` | 🛠️ Manual | Mouse configuration software |
 | [Macmillan Education Everywhere](https://www.macmillaneducationeverywhere.com) | `mee` | 🛠️ Manual | Digital teaching and learning platform |
 | [Navio](https://www.macmillaneducationeverywhere.com) | `navio` | 🛠️ Manual | Interactive learning platform by Macmillan Education |
+| [Sine](https://github.com/CosmoCreeper/Sine) | `sine` | ⚡ Yes | Theme & mod manager for Firefox-based browsers |
 
 ## How do I install these manifests?
 
@@ -27,5 +28,6 @@ scoop install kud3n013_icekream/canva
 scoop install kud3n013_icekream/attackshark-x6
 scoop install kud3n013_icekream/mee
 scoop install kud3n013_icekream/navio
+scoop install kud3n013_icekream/sine
 ```
 
