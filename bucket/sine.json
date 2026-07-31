@@ -3,6 +3,7 @@
     "description": "The ultimate theme manager for Firefox-based browsers. A community-driven mod/theme manager designed to be efficient, powerful, and user-friendly.",
     "homepage": "https://github.com/CosmoCreeper/Sine",
     "license": "MPL-2.0",
+    "notes": "If Smart App Control or Windows Defender blocks or deletes 'sine.exe', go to Windows Security > Protection History to allow the file, or add an exclusion path for Scoop: Add-MpPreference -ExclusionPath \"$env:USERPROFILE\\scoop\\apps\\sine\"",
     "architecture": {
         "64bit": {
             "url": "https://github.com/CosmoCreeper/Sine/releases/download/v2.3.3/sine-win-x64.exe#/sine.bin",
