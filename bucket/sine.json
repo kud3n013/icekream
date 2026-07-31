@@ -1,4 +1,5 @@
 {
+    "$schema": "https://raw.githubusercontent.com/ScoopInstaller/Scoop/master/schema.json",
     "version": "2.3.3",
     "description": "The ultimate theme manager for Firefox-based browsers. A community-driven mod/theme manager designed to be efficient, powerful, and user-friendly.",
     "homepage": "https://github.com/CosmoCreeper/Sine",

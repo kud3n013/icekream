@@ -1,4 +1,5 @@
 {
+    "$schema": "https://raw.githubusercontent.com/ScoopInstaller/Scoop/master/schema.json",
     "version": "26.7.10",
     "description": "Messaging application",
     "homepage": "https://zalo.me/en/product/zalo",
@@ -13,7 +14,6 @@
             "Zalo"
         ]
     ],
-    "post_uninstall": "Remove-Item \"$env:APPDATA\\Microsoft\\Windows\\Start Menu\\Programs\\Zalo.lnk\" -ErrorAction SilentlyContinue",
     "checkver": {
         "script": [
             "try {",

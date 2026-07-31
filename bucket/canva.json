@@ -1,4 +1,5 @@
 {
+    "$schema": "https://raw.githubusercontent.com/ScoopInstaller/Scoop/master/schema.json",
     "version": "1.123.1",
     "description": "Canva Desktop. Design platform for creating presentations, social media graphics, videos, and more.",
     "homepage": "https://www.canva.com",
@@ -13,7 +14,6 @@
             "Canva"
         ]
     ],
-    "post_uninstall": "Remove-Item \"$env:APPDATA\\Microsoft\\Windows\\Start Menu\\Programs\\Canva.lnk\" -ErrorAction SilentlyContinue",
     "checkver": {
         "url": "https://desktop-release.canva.com/latest.yml",
         "regex": "version: ([\\d.]+)"

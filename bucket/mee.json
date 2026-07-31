@@ -1,4 +1,5 @@
 {
+    "$schema": "https://raw.githubusercontent.com/ScoopInstaller/Scoop/master/schema.json",
     "version": "3.0.0",
     "description": "Macmillan Education Everywhere platform for accessing digital teaching and learning tools.",
     "homepage": "https://www.macmillaneducationeverywhere.com",

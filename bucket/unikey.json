@@ -1,4 +1,5 @@
 {
+    "$schema": "https://raw.githubusercontent.com/ScoopInstaller/Scoop/master/schema.json",
     "version": "4.6-rc.2",
     "description": "Vietnamese input method editor",
     "homepage": "https://unikey.org/en",
@@ -22,6 +23,11 @@
             "UniKeyNT.exe",
             "UniKey"
         ]
+    ],
+    "persist": [
+        "unikey.ini",
+        "uk32.key",
+        "uk64.key"
     ],
     "checkver": {
         "url": "https://unikey.org/download.html",

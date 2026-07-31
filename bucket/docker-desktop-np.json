@@ -1,4 +1,5 @@
 {
+    "$schema": "https://raw.githubusercontent.com/ScoopInstaller/Scoop/master/schema.json",
     "version": "4.84.0",
     "description": "Docker Desktop for Windows. Easy-to-install application for building and sharing containerized applications and microservices (all-users / non-portable installation).",
     "homepage": "https://www.docker.com/products/docker-desktop/",

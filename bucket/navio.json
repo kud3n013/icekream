@@ -1,4 +1,5 @@
 {
+    "$schema": "https://raw.githubusercontent.com/ScoopInstaller/Scoop/master/schema.json",
     "version": "2.15.5998",
     "description": "Navio platform by Macmillan Education for interactive learning experiences.",
     "homepage": "https://www.macmillaneducationeverywhere.com",
