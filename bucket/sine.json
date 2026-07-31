@@ -13,6 +13,7 @@
             "hash": "1a5c18b65323203225c706007e236903cdf8461e5d5222d9d673f00312fa62a0"
         }
     },
+    "pre_install": "Unblock-File \"$dir\\sine.exe\"",
     "bin": "sine.exe",
     "checkver": {
         "github": "https://github.com/CosmoCreeper/Sine"
