@@ -7,7 +7,7 @@
         "SearXNG container is running at http://localhost:8888",
         "Use 'searxng status', 'searxng start', 'searxng stop', 'searxng restart', 'searxng logs', or 'searxng open' to manage the container."
     ],
-    "url": "https://raw.githubusercontent.com/searxng/searxng/master/README.md#/searxng-stub.txt",
+    "url": "https://raw.githubusercontent.com/searxng/searxng/master/LICENSE#/searxng-stub.txt",
     "hash": "skip",
     "post_install": [
         "# Resolve Docker executable path",
