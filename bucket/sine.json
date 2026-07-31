@@ -5,18 +5,21 @@
     "license": "MPL-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/CosmoCreeper/Sine/releases/download/v2.3.3/sine-win-x64.exe#/dl.7z",
+            "url": "https://github.com/CosmoCreeper/Sine/releases/download/v2.3.3/sine-win-x64.exe#/sine.bin",
             "hash": "5cc6bc9d4e00a78059aa47217b0a0db3e52438354d1988c35ddf8aebda3a8dde"
         },
         "arm64": {
-            "url": "https://github.com/CosmoCreeper/Sine/releases/download/v2.3.3/sine-win-arm64.exe#/dl.7z",
+            "url": "https://github.com/CosmoCreeper/Sine/releases/download/v2.3.3/sine-win-arm64.exe#/sine.bin",
             "hash": "1a5c18b65323203225c706007e236903cdf8461e5d5222d9d673f00312fa62a0"
         }
     },
-    "pre_install": [
-        "Get-ChildItem \"$dir\" -Filter 'sine-win-*.exe' | Rename-Item -NewName 'sine.exe'",
-        "Unblock-File \"$dir\\sine.exe\""
-    ],
+    "installer": {
+        "script": [
+            "Copy-Item \"$dir\\sine.bin\" \"$dir\\sine.exe\"",
+            "Remove-Item \"$dir\\sine.bin\"",
+            "Unblock-File \"$dir\\sine.exe\""
+        ]
+    },
     "bin": "sine.exe",
     "checkver": {
         "github": "https://github.com/CosmoCreeper/Sine"
@@ -24,10 +27,10 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/CosmoCreeper/Sine/releases/download/v$version/sine-win-x64.exe#/dl.7z"
+                "url": "https://github.com/CosmoCreeper/Sine/releases/download/v$version/sine-win-x64.exe#/sine.bin"
             },
             "arm64": {
-                "url": "https://github.com/CosmoCreeper/Sine/releases/download/v$version/sine-win-arm64.exe#/dl.7z"
+                "url": "https://github.com/CosmoCreeper/Sine/releases/download/v$version/sine-win-arm64.exe#/sine.bin"
             }
         },
         "hash": {
