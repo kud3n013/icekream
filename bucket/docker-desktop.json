@@ -22,10 +22,12 @@
     },
     "uninstaller": {
         "script": [
-            "if (Test-Path \"$env:LOCALAPPDATA\\Programs\\DockerDesktop\\Docker Desktop Installer.exe\") {",
-            "    Start-Process \"$env:LOCALAPPDATA\\Programs\\DockerDesktop\\Docker Desktop Installer.exe\" -ArgumentList 'uninstall', '--quiet' -Wait",
-            "} elseif (Test-Path \"$env:LOCALAPPDATA\\Programs\\Docker\\Docker\\Docker Desktop Installer.exe\") {",
-            "    Start-Process \"$env:LOCALAPPDATA\\Programs\\Docker\\Docker\\Docker Desktop Installer.exe\" -ArgumentList 'uninstall', '--quiet' -Wait",
+            "if ($cmd -eq 'uninstall') {",
+            "    if (Test-Path \"$env:LOCALAPPDATA\\Programs\\DockerDesktop\\Docker Desktop Installer.exe\") {",
+            "        Start-Process \"$env:LOCALAPPDATA\\Programs\\DockerDesktop\\Docker Desktop Installer.exe\" -ArgumentList 'uninstall', '--quiet' -Wait",
+            "    } elseif (Test-Path \"$env:LOCALAPPDATA\\Programs\\Docker\\Docker\\Docker Desktop Installer.exe\") {",
+            "        Start-Process \"$env:LOCALAPPDATA\\Programs\\Docker\\Docker\\Docker Desktop Installer.exe\" -ArgumentList 'uninstall', '--quiet' -Wait",
+            "    }",
             "}"
         ]
     },

@@ -21,8 +21,10 @@
     },
     "uninstaller": {
         "script": [
-            "if (Test-Path \"$env:ProgramFiles\\Docker\\Docker\\Docker Desktop Installer.exe\") {",
-            "    Start-Process \"$env:ProgramFiles\\Docker\\Docker\\Docker Desktop Installer.exe\" -ArgumentList 'uninstall', '--quiet' -Wait",
+            "if ($cmd -eq 'uninstall') {",
+            "    if (Test-Path \"$env:ProgramFiles\\Docker\\Docker\\Docker Desktop Installer.exe\") {",
+            "        Start-Process \"$env:ProgramFiles\\Docker\\Docker\\Docker Desktop Installer.exe\" -ArgumentList 'uninstall', '--quiet' -Wait",
+            "    }",
             "}"
         ]
     },
