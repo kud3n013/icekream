@@ -17,25 +17,18 @@
     "suggest": {
         "Docker Desktop": "docker-desktop-np"
     },
+    "architecture": {
+        "64bit": {
+            "url": "https://raw.githubusercontent.com/kud3n013/icekream/master/scripts/searxng.ps1",
+            "hash": "91cd2aa21902323b98a77956f4ce687e6dc81dfbe06af920089521862ccf32ae"
+        }
+    },
     "bin": "searxng.ps1",
     "post_install": [
         "if (-not (Get-Command 'docker' -ErrorAction SilentlyContinue)) {",
         "    error 'Docker CLI not found. Please install and start Docker Desktop first.'",
         "    return",
         "}",
-        "$cmdScript = @'",
-        "param([string]`$Action = 'status')",
-        "switch (`$Action.ToLower()) {",
-        "    'start'   { docker start searxng }",
-        "    'enable'  { docker start searxng }",
-        "    'stop'    { docker stop searxng }",
-        "    'disable' { docker stop searxng }",
-        "    'restart' { docker restart searxng }",
-        "    'status'  { docker ps -a --filter 'name=searxng' }",
-        "    default   { Write-Host 'Usage: searxng [start|stop|enable|disable|status|restart]' }",
-        "}",
-        "'@",
-        "Set-Content -Path \"$dir\\searxng.ps1\" -Value $cmdScript -Encoding UTF8",
         "Write-Host 'Pulling SearXNG Docker image...' -ForegroundColor Cyan",
         "docker pull searxng/searxng:latest",
         "$volDir = Join-Path $env:USERPROFILE '.searxng'",
