@@ -17,6 +17,9 @@ Template bucket for [Scoop](https://scoop.sh), the Windows command-line installe
 | [Sine](https://github.com/CosmoCreeper/Sine) | `sine` | ⚡ Yes | Theme & mod manager for Firefox-based browsers |
 | [Docker Desktop](https://www.docker.com/products/docker-desktop/) | `docker-desktop` | ⚡ Yes | Build and share containerized applications (per-user) |
 | [Docker Desktop (Nonportable)](https://www.docker.com/products/docker-desktop/) | `docker-desktop-np` | ⚡ Yes | Build and share containerized applications (all-users) |
+| [SearXNG](https://github.com/searxng/searxng) | `searxng` | ⚡ Yes | 🐳 Privacy-respecting metasearch engine (Docker) |
+
+> **Note:** Apps marked with 🐳 require [Docker Desktop](https://www.docker.com/products/docker-desktop/) to be installed and running.
 
 ## How do I install these manifests?
 
@@ -33,5 +36,6 @@ scoop install kud3n013_icekream/navio
 scoop install kud3n013_icekream/sine
 scoop install kud3n013_icekream/docker-desktop
 scoop install kud3n013_icekream/docker-desktop-np
+scoop install kud3n013_icekream/searxng
 ```
 
