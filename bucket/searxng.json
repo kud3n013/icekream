@@ -1,0 +1,60 @@
+{
+    "$schema": "https://raw.githubusercontent.com/ScoopInstaller/Scoop/master/schema.json",
+    "version": "latest",
+    "description": "SearXNG privacy-respecting metasearch engine running via Docker.",
+    "homepage": "https://github.com/searxng/searxng",
+    "license": "AGPL-3.0-or-later",
+    "notes": [
+        "SearXNG is managed via Docker container.",
+        "Web interface available at: http://localhost:8888",
+        "",
+        "Management commands:",
+        "  searxng start    (Start container)",
+        "  searxng stop     (Stop container)",
+        "  searxng status   (Check container status)",
+        "  searxng restart  (Restart container)"
+    ],
+    "suggest": {
+        "Docker Desktop": "docker-desktop-np"
+    },
+    "bin": "searxng.ps1",
+    "post_install": [
+        "if (-not (Get-Command 'docker' -ErrorAction SilentlyContinue)) {",
+        "    error 'Docker CLI not found. Please install and start Docker Desktop first.'",
+        "    return",
+        "}",
+        "$cmdScript = @'",
+        "param([string]`$Action = 'status')",
+        "switch (`$Action.ToLower()) {",
+        "    'start'   { docker start searxng }",
+        "    'enable'  { docker start searxng }",
+        "    'stop'    { docker stop searxng }",
+        "    'disable' { docker stop searxng }",
+        "    'restart' { docker restart searxng }",
+        "    'status'  { docker ps -a --filter 'name=searxng' }",
+        "    default   { Write-Host 'Usage: searxng [start|stop|enable|disable|status|restart]' }",
+        "}",
+        "'@",
+        "Set-Content -Path \"$dir\\searxng.ps1\" -Value $cmdScript -Encoding UTF8",
+        "Write-Host 'Pulling SearXNG Docker image...' -ForegroundColor Cyan",
+        "docker pull searxng/searxng:latest",
+        "$volDir = Join-Path $env:USERPROFILE '.searxng'",
+        "if (-not (Test-Path $volDir)) { New-Item -ItemType Directory -Path $volDir -Force | Out-Null }",
+        "docker rm -f searxng 2>$null",
+        "Write-Host 'Starting SearXNG container on http://localhost:8888 ...' -ForegroundColor Green",
+        "docker run -d --name searxng --restart=unless-stopped --publish 8888:8080 -v \"${volDir}:/etc/searxng\" searxng/searxng:latest"
+    ],
+    "uninstaller": {
+        "script": [
+            "Write-Host 'Stopping and removing SearXNG container...' -ForegroundColor Yellow",
+            "docker rm -f searxng 2>$null",
+            "Write-Host 'Removing SearXNG Docker image...' -ForegroundColor Yellow",
+            "docker rmi searxng/searxng:latest 2>$null",
+            "$volDir = Join-Path $env:USERPROFILE '.searxng'",
+            "if (Test-Path $volDir) { Remove-Item -Path $volDir -Recurse -Force }"
+        ]
+    },
+    "checkver": {
+        "github": "https://github.com/searxng/searxng"
+    }
+}
