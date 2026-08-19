@@ -1,23 +1,39 @@
 {
     "$schema": "https://raw.githubusercontent.com/ScoopInstaller/Scoop/master/schema.json",
     "version": "149.0.7827.202",
-    "description": "Cốc Cốc Browser. The optimized Chromium-based web browser for Vietnamese users with built-in Adblocker, Video Downloader, and PiP.",
-    "homepage": "https://coccoc.com/en",
+    "description": "Cốc Cốc Browser. Trình duyệt web dành cho người Việt.",
+    "homepage": "https://coccoc.com/",
     "license": "Proprietary",
-    "notes": "Cốc Cốc installs system-wide and manages its own background updates.",
+    "notes": [
+        "Cốc Cốc has been installed silently.",
+        "The following 3 options were automatically unchecked/disabled:",
+        "  - Make Cốc Cốc default browser",
+        "  - Make Cốc Cốc default PDF reader",
+        "  - Run browser on system start"
+    ],
     "architecture": {
         "64bit": {
-            "url": "https://files1.coccoc.com/browser/x64/coccoc_en_machine.exe#/installer.exe",
-            "hash": "c1569c95cce8e50ad4e4494ac718f172bea885b84389d57820b2f81e784ba888"
+            "url": "https://files.coccoc.com/browser/download/vi?plat=win&arch=x64#/CocCocSetup.exe",
+            "hash": "7bd45b747077934cb5d27f6d68294b9b60b690639ae5cdfc9601e733493bc9e5"
+        },
+        "32bit": {
+            "url": "https://files.coccoc.com/browser/download/vi?plat=win&arch=#/CocCocSetup.exe",
+            "hash": "ca35d452a235095455a67263895195dbebbfa8b962fe11c2ad63d1d10f2dfe06"
         }
     },
     "installer": {
-        "file": "installer.exe",
+        "file": "CocCocSetup.exe",
         "args": [
-            "/install",
-            "/silent"
+            "/silent",
+            "/install"
         ]
     },
+    "post_install": [
+        "Remove-ItemProperty -Path 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run' -Name 'CocCoc*', 'CocCocUpdate*' -ErrorAction SilentlyContinue",
+        "Get-ScheduledTask -TaskPath '\\*' -ErrorAction SilentlyContinue | Where-Object { $_.TaskName -like '*CocCoc*' } | Disable-ScheduledTask -ErrorAction SilentlyContinue",
+        "Remove-ItemProperty -Path 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FileExts\\.pdf\\UserChoice' -Name 'ProgId' -ErrorAction SilentlyContinue",
+        "Get-Process -Name '*coccoc*', 'browser' -ErrorAction SilentlyContinue | Where-Object { $_.Path -like '*CocCoc*' } | Stop-Process -Force -ErrorAction SilentlyContinue"
+    ],
     "uninstaller": {
         "script": [
             "$regPaths = @(",
@@ -34,7 +50,7 @@
     },
     "checkver": {
         "script": [
-            "$url = 'https://files1.coccoc.com/browser/x64/coccoc_en_machine.exe'",
+            "$url = 'https://files.coccoc.com/browser/download/vi?plat=win&arch=x64'",
             "$tempFile = Join-Path $env:TEMP 'coccoc_checkver.exe'",
             "Invoke-WebRequest -Uri $url -OutFile $tempFile -UseBasicParsing",
             "$version = (Get-Item $tempFile).VersionInfo.FileVersion",
@@ -46,7 +62,10 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://files1.coccoc.com/browser/x64/coccoc_en_machine.exe#/installer.exe"
+                "url": "https://files.coccoc.com/browser/download/vi?plat=win&arch=x64#/CocCocSetup.exe"
+            },
+            "32bit": {
+                "url": "https://files.coccoc.com/browser/download/vi?plat=win&arch=#/CocCocSetup.exe"
             }
         }
     }
