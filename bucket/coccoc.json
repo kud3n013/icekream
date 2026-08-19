@@ -1,0 +1,51 @@
+{
+    "$schema": "https://raw.githubusercontent.com/ScoopInstaller/Scoop/master/schema.json",
+    "version": "149.0.7827.202",
+    "description": "Cốc Cốc Browser. The optimized Chromium-based web browser for Vietnamese users with built-in Adblocker, Video Downloader, and PiP.",
+    "homepage": "https://coccoc.com/en",
+    "license": "Proprietary",
+    "notes": "Cốc Cốc installs system-wide to '%LOCALAPPDATA%\\CocCoc' and manages its own updates.",
+    "architecture": {
+        "64bit": {
+            "url": "https://files1.coccoc.com/browser/x64/coccoc_en_machine.exe",
+            "hash": "c1569c95cce8e50ad4e4494ac718f172bea885b84389d57820b2f81e784ba888"
+        }
+    },
+    "installer": {
+        "script": [
+            "Start-Process \"$dir\\coccoc_en_machine.exe\" -ArgumentList '/install', '/silent' -Wait"
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "$regPaths = @(",
+            "    'HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\*',",
+            "    'HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\*',",
+            "    'HKLM:\\SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\*'",
+            ")",
+            "$uninstallEntry = $regPaths | ForEach-Object { Get-ItemProperty $_ -ErrorAction SilentlyContinue } | Where-Object { $_.DisplayName -like 'Coc Coc*' } | Select-Object -First 1",
+            "if ($uninstallEntry -and $uninstallEntry.UninstallString) {",
+            "    $uninstallCmd = $uninstallEntry.UninstallString -replace '\"', ''",
+            "    Start-Process $uninstallCmd -ArgumentList '--uninstall', '--force-uninstall' -Wait",
+            "}"
+        ]
+    },
+    "checkver": {
+        "script": [
+            "$url = 'https://files1.coccoc.com/browser/x64/coccoc_en_machine.exe'",
+            "$tempFile = Join-Path $env:TEMP 'coccoc_checkver.exe'",
+            "Invoke-WebRequest -Uri $url -OutFile $tempFile -UseBasicParsing",
+            "$version = (Get-Item $tempFile).VersionInfo.FileVersion",
+            "Remove-Item $tempFile -Force",
+            "Write-Output $version"
+        ],
+        "regex": "([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://files1.coccoc.com/browser/x64/coccoc_en_machine.exe"
+            }
+        }
+    }
+}
