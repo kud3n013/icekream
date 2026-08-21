@@ -1,6 +1,6 @@
 {
     "$schema": "https://raw.githubusercontent.com/ScoopInstaller/Scoop/master/schema.json",
-    "version": "149.0.7827.202",
+    "version": "151.0.7922.140",
     "description": "Cốc Cốc Browser. Trình duyệt web dành cho người Việt.",
     "homepage": "https://coccoc.com/",
     "license": "Proprietary",
@@ -14,11 +14,11 @@
     "architecture": {
         "64bit": {
             "url": "https://files.coccoc.com/browser/download/vi?plat=win&arch=x64#/CocCocSetup.exe",
-            "hash": "7bd45b747077934cb5d27f6d68294b9b60b690639ae5cdfc9601e733493bc9e5"
+            "hash": "896fd9408e371de759c670a4c44afea19c7a7a1baacc25f5ad2125396879d651"
         },
         "32bit": {
             "url": "https://files.coccoc.com/browser/download/vi?plat=win&arch=#/CocCocSetup.exe",
-            "hash": "ca35d452a235095455a67263895195dbebbfa8b962fe11c2ad63d1d10f2dfe06"
+            "hash": "ad7699f9edf41bd55cacd79ef9e5dc09914ddb2b3beaaeb479f23dffa3773eb4"
         }
     },
     "installer": {
