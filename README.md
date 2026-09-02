@@ -11,6 +11,7 @@ Template bucket for [Scoop](https://scoop.sh), the Windows command-line installe
 | [UniKey](https://unikey.org/en) | `unikey` | ⚡ Yes | Vietnamese input method editor |
 | [Zalo](https://zalo.me/en/product/zalo) | `zalo` | ⚡ Yes | Desktop messaging application |
 | [Canva Desktop](https://www.canva.com) | `canva` | ⚡ Yes | Graphic design & presentation platform |
+| [ClassIn](https://www.classin.com) | `classin` | ⚡ Yes | Interactive online classroom and learning platform |
 | [Attack Shark X6](https://www.attackshark.pro) | `attackshark-x6` | 🛠️ Manual | Mouse configuration software |
 | [Macmillan Education Everywhere](https://www.macmillaneducationeverywhere.com) | `mee` | 🛠️ Manual | Digital teaching and learning platform |
 | [Navio](https://www.macmillaneducationeverywhere.com) | `navio` | 🛠️ Manual | Interactive learning platform by Macmillan Education |
@@ -30,6 +31,7 @@ scoop bucket add kud3n013_icekream https://github.com/kud3n013/icekream
 scoop install kud3n013_icekream/unikey
 scoop install kud3n013_icekream/zalo
 scoop install kud3n013_icekream/canva
+scoop install kud3n013_icekream/classin
 scoop install kud3n013_icekream/attackshark-x6
 scoop install kud3n013_icekream/mee
 scoop install kud3n013_icekream/navio
