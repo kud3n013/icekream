@@ -13,10 +13,34 @@
             "hash": "b8e30ae2f0f16780351bdc5cd9a518c917c9086f13d3c420aa9bef581908bb90"
         }
     },
+    "pre_install": [
+        "Set-Content -Path \"$dir\\discord.cmd\" -Value \"@echo off`r`nstart \"\"\"\" \"\"%LOCALAPPDATA%\\Discord\\Update.exe\"\" --processStart Discord.exe %*\""
+    ],
     "installer": {
         "file": "DiscordSetup.exe",
-        "args": "-s"
+        "args": [
+            "--silent"
+        ]
     },
+    "post_install": [
+        "Stop-Process -Name 'Discord', 'Update' -Force -ErrorAction SilentlyContinue",
+        "Start-Sleep -Seconds 1",
+        "$discordDir = \"$env:LOCALAPPDATA\\Discord\"",
+        "$appDir = Get-ChildItem -Path $discordDir -Directory -Filter 'app-*' -ErrorAction SilentlyContinue | Select-Object -Last 1",
+        "if ($appDir -and (Test-Path \"$($appDir.FullName)\\installer.db\") -and (-not (Test-Path \"$discordDir\\installer.db\"))) {",
+        "    Copy-Item \"$($appDir.FullName)\\installer.db\" \"$discordDir\\installer.db\" -Force",
+        "}"
+    ],
+    "bin": [
+        [
+            "discord.cmd",
+            "discord"
+        ],
+        [
+            "discord.cmd",
+            "discord-np"
+        ]
+    ],
     "uninstaller": {
         "script": [
             "if ($cmd -eq 'uninstall') {",
@@ -25,6 +49,19 @@
             "    $uninstaller = \"$env:LOCALAPPDATA\\Discord\\Update.exe\"",
             "    if (Test-Path $uninstaller) {",
             "        Start-Process -FilePath $uninstaller -ArgumentList '--uninstall', '-s' -Wait",
+            "        Start-Sleep -Seconds 3",
+            "    }",
+            "    Stop-Process -Name 'Discord', 'Update' -Force -ErrorAction SilentlyContinue",
+            "    if (Test-Path \"$env:LOCALAPPDATA\\Discord\") {",
+            "        Remove-Item -Path \"$env:LOCALAPPDATA\\Discord\" -Recurse -Force -ErrorAction SilentlyContinue",
+            "    }",
+            "    $startMenuDir = \"$env:APPDATA\\Microsoft\\Windows\\Start Menu\\Programs\\Discord Inc\"",
+            "    if (Test-Path $startMenuDir) {",
+            "        Remove-Item -Path $startMenuDir -Recurse -Force -ErrorAction SilentlyContinue",
+            "    }",
+            "    $desktopLnk = [Environment]::GetFolderPath('Desktop') + '\\Discord.lnk'",
+            "    if (Test-Path $desktopLnk) {",
+            "        Remove-Item -Path $desktopLnk -Force -ErrorAction SilentlyContinue",
             "    }",
             "}"
         ]
