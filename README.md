@@ -22,6 +22,7 @@ Template bucket for [Scoop](https://scoop.sh), the Windows command-line installe
 | [Rockstar Games Launcher](https://www.rockstargames.com) | `rockstar-games-launcher` | 🛠️ Manual | Official platform to download and play Rockstar Games PC titles |
 | [FACEIT Client](https://www.faceit.com) | `faceit-client` | ⚡ Yes | Competitive gaming platform for Counter-Strike 2 and other esports titles |
 | [FACEIT Anti-Cheat](https://www.faceit.com) | `faceit-ac` | 🛠️ Manual | Kernel-level anti-cheat client for FACEIT competitive matchmaking |
+| [Discord (Nonportable)](https://discord.com) | `discord-np` | ⚡ Yes | All-in-one voice, video, and text communication service |
 
 > **Note:** Apps marked with 🐳 require [Docker Desktop](https://www.docker.com/products/docker-desktop/) to be installed and running.
 
@@ -45,5 +46,6 @@ scoop install kud3n013_icekream/searxng
 scoop install kud3n013_icekream/rockstar-games-launcher
 scoop install kud3n013_icekream/faceit-client
 sudo scoop install kud3n013_icekream/faceit-ac
+scoop install kud3n013_icekream/discord-np
 ```
 

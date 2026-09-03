@@ -1,0 +1,43 @@
+{
+    "$schema": "https://raw.githubusercontent.com/ScoopInstaller/Scoop/master/schema.json",
+    "version": "1.0.9255",
+    "description": "Discord. All-in-one voice, video, and text chat service (non-portable installation).",
+    "homepage": "https://discord.com",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://discord.com/terms"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://dl.discordapp.net/distro/app/stable/win/x64/1.0.9255/DiscordSetup.exe",
+            "hash": "b8e30ae2f0f16780351bdc5cd9a518c917c9086f13d3c420aa9bef581908bb90"
+        }
+    },
+    "installer": {
+        "file": "DiscordSetup.exe",
+        "args": "-s"
+    },
+    "uninstaller": {
+        "script": [
+            "if ($cmd -eq 'uninstall') {",
+            "    Stop-Process -Name 'Discord', 'Update' -Force -ErrorAction SilentlyContinue",
+            "    Start-Sleep -Seconds 1",
+            "    $uninstaller = \"$env:LOCALAPPDATA\\Discord\\Update.exe\"",
+            "    if (Test-Path $uninstaller) {",
+            "        Start-Process -FilePath $uninstaller -ArgumentList '--uninstall', '-s' -Wait",
+            "    }",
+            "}"
+        ]
+    },
+    "checkver": {
+        "script": "(curl.exe -I -s -A 'Mozilla/5.0' 'https://discord.com/api/downloads/distributions/app/installers/latest?channel=stable&platform=win&arch=x64') | Where-Object { $_ -match 'location:' }",
+        "regex": "/([\\d.]+)/DiscordSetup\\.exe"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://dl.discordapp.net/distro/app/stable/win/x64/$version/DiscordSetup.exe"
+            }
+        }
+    }
+}
