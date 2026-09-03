@@ -1,6 +1,6 @@
 {
     "$schema": "https://raw.githubusercontent.com/ScoopInstaller/Scoop/master/schema.json",
-    "version": "1.0.9255",
+    "version": "1.0.9256",
     "description": "Discord. All-in-one voice, video, and text chat service (non-portable installation).",
     "homepage": "https://discord.com",
     "license": {
@@ -9,18 +9,14 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://dl.discordapp.net/distro/app/stable/win/x64/1.0.9255/DiscordSetup.exe",
-            "hash": "b8e30ae2f0f16780351bdc5cd9a518c917c9086f13d3c420aa9bef581908bb90"
+            "url": "https://dl.discordapp.net/distro/app/stable/win/x64/1.0.9256/DiscordSetup.exe",
+            "hash": "2d4c7dbf1ec9dae5e7e03db93a27f1d33efa64fdcbcd8aa4e3b83c1b46cf65b7"
         }
     },
-    "pre_install": [
-        "Set-Content -Path \"$dir\\discord.cmd\" -Value \"@echo off`r`nstart \"\"\"\" \"\"%LOCALAPPDATA%\\Discord\\Update.exe\"\" --processStart Discord.exe %*\""
-    ],
+    "pre_install": "Set-Content -Path \"$dir\\discord.cmd\" -Value \"@echo off`r`nstart \"\"\"\" \"\"%LOCALAPPDATA%\\Discord\\Update.exe\"\" --processStart Discord.exe %*\"",
     "installer": {
         "file": "DiscordSetup.exe",
-        "args": [
-            "--silent"
-        ]
+        "args": "--silent"
     },
     "post_install": [
         "Stop-Process -Name 'Discord', 'Update' -Force -ErrorAction SilentlyContinue",
