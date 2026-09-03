@@ -1,0 +1,41 @@
+{
+    "$schema": "https://raw.githubusercontent.com/ScoopInstaller/Scoop/master/schema.json",
+    "version": "1.0.108.2970",
+    "description": "Rockstar Games Launcher. Official platform to download and play Rockstar Games PC titles.",
+    "homepage": "https://www.rockstargames.com",
+    "license": "Proprietary",
+    "notes": "Rockstar Games Launcher requires administrative privileges for installation and uninstallation.",
+    "architecture": {
+        "64bit": {
+            "url": "https://gamedownloads.rockstargames.com/public/installer/Rockstar-Games-Launcher.exe",
+            "hash": "c70131cb0427d146c9489297822e99ad87d4d5e141fd999d19f00975ab1a31f2"
+        }
+    },
+    "installer": {
+        "script": [
+            "if (-not (is_admin)) {",
+            "    error 'Administrator privileges are required to install Rockstar Games Launcher. Please run Scoop from an elevated PowerShell prompt.'",
+            "    break",
+            "}",
+            "Start-Process -FilePath \"$dir\\Rockstar-Games-Launcher.exe\" -ArgumentList '/s', '/f' -Wait"
+        ]
+    },
+    "post_install": "Remove-Item \"$dir\\Rockstar-Games-Launcher.exe\" -Force -ErrorAction SilentlyContinue",
+    "uninstaller": {
+        "script": [
+            "if ($cmd -eq 'uninstall') {",
+            "    $uninstaller = \"$env:ProgramFiles\\Rockstar Games\\Launcher\\uninstall.exe\"",
+            "    if (-not (Test-Path $uninstaller)) {",
+            "        $uninstaller = \"${env:ProgramFiles(x86)}\\Rockstar Games\\Launcher\\uninstall.exe\"",
+            "    }",
+            "    if (Test-Path $uninstaller) {",
+            "        if (-not (is_admin)) {",
+            "            error 'Administrator privileges are required to uninstall Rockstar Games Launcher. Please run Scoop from an elevated PowerShell prompt.'",
+            "            break",
+            "        }",
+            "        Start-Process -FilePath $uninstaller -ArgumentList '/S' -Wait",
+            "    }",
+            "}"
+        ]
+    }
+}

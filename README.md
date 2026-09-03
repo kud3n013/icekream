@@ -19,6 +19,7 @@ Template bucket for [Scoop](https://scoop.sh), the Windows command-line installe
 | [Docker Desktop](https://www.docker.com/products/docker-desktop/) | `docker-desktop` | ⚡ Yes | Build and share containerized applications (per-user) |
 | [Docker Desktop (Nonportable)](https://www.docker.com/products/docker-desktop/) | `docker-desktop-np` | ⚡ Yes | Build and share containerized applications (all-users) |
 | [SearXNG](https://github.com/searxng/searxng) | `searxng` | ⚡ Yes | 🐳 Privacy-respecting metasearch engine (Docker) |
+| [Rockstar Games Launcher](https://www.rockstargames.com) | `rockstar-games-launcher` | 🛠️ Manual | Official platform to download and play Rockstar Games PC titles |
 
 > **Note:** Apps marked with 🐳 require [Docker Desktop](https://www.docker.com/products/docker-desktop/) to be installed and running.
 
@@ -39,5 +40,6 @@ scoop install kud3n013_icekream/sine
 scoop install kud3n013_icekream/docker-desktop
 scoop install kud3n013_icekream/docker-desktop-np
 scoop install kud3n013_icekream/searxng
+scoop install kud3n013_icekream/rockstar-games-launcher
 ```
 
