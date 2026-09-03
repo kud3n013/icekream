@@ -6,6 +6,7 @@
     "license": "Proprietary",
     "notes": [
         "FACEIT Anti-Cheat requires administrator privileges to install and uninstall (e.g. 'sudo scoop install faceit-ac').",
+        "IMPORTANT: Launch 'FACEIT AC' from the Start Menu, wait for it to update, and restart your computer before playing.",
         "Connecting to FACEIT servers requires UEFI Boot Mode, Secure Boot enabled, TPM 2.0, CPU Virtualization (VT-x/AMD-V), and VBS / Core Isolation.",
         "Documentation & Troubleshooting: https://support.faceit.com/hc/en-us/sections/360000035544-Anti-Cheat"
     ],
@@ -32,7 +33,8 @@
         ]
     },
     "post_install": [
-        "Remove-Item \"$dir\\FACEITInstaller_64.exe\" -Force -ErrorAction SilentlyContinue"
+        "Remove-Item \"$dir\\FACEITInstaller_64.exe\" -Force -ErrorAction SilentlyContinue",
+        "warn 'Please launch FACEIT AC from the Start Menu, wait for it to finish updating, and restart your computer before playing.'"
     ],
     "uninstaller": {
         "script": [
