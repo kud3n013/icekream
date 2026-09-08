@@ -1,14 +1,14 @@
 {
     "$schema": "https://raw.githubusercontent.com/ScoopInstaller/Scoop/master/schema.json",
-    "version": "2.9.0",
+    "version": "2.9.2",
     "description": "FACEIT Desktop Client. Competitive gaming platform for Counter-Strike 2 and other esports titles.",
     "homepage": "https://www.faceit.com",
     "license": "Proprietary",
     "notes": "FACEIT Anti-Cheat is not included and must be installed separately if prompted.",
     "architecture": {
         "64bit": {
-            "url": "https://faceit-client.faceit-cdn.net/release/FACEIT-2.9.0-full.nupkg",
-            "hash": "sha1:8c8265939c0064a55a44a9dc6cd4b5f6ddacb7e6"
+            "url": "https://faceit-client.faceit-cdn.net/release/FACEIT-2.9.2-full.nupkg",
+            "hash": "sha1:fafa49f19a18f561ce7900967c1946e6309898ca"
         }
     },
     "extract_dir": "lib\\net45",
