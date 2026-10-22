@@ -1,6 +1,6 @@
 {
     "$schema": "https://raw.githubusercontent.com/ScoopInstaller/Scoop/master/schema.json",
-    "version": "4.96.1",
+    "version": "4.96.2",
     "description": "Docker Desktop for Windows. Easy-to-install application for building and sharing containerized applications and microservices (per-user installation).",
     "homepage": "https://www.docker.com/products/docker-desktop/",
     "license": "Proprietary",
@@ -8,7 +8,7 @@
     "architecture": {
         "64bit": {
             "url": "https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe#/installer.exe",
-            "hash": "87950d4659b9485c664b37a375276d4fc7bb88f948ddcb81314b843424bfac32"
+            "hash": "ceb589a9871b52971b24aa65915192854e5391a43d3df1b551db89aac50f24fa"
         }
     },
     "installer": {
