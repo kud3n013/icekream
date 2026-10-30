@@ -1,13 +1,13 @@
 {
     "$schema": "https://raw.githubusercontent.com/ScoopInstaller/Scoop/master/schema.json",
-    "version": "6.0.9.1891",
+    "version": "6.0.9.3131",
     "description": "Interactive online classroom and learning platform",
     "homepage": "https://www.classin.com",
     "license": "Proprietary",
     "architecture": {
         "64bit": {
-            "url": "https://download.eeo.cn/client/classin_win_install_6.0.9.1891_x64.exe#/dl.7z",
-            "hash": "d3ebaaafe293b1786e49746a2f8e48f35a26e4ebaa62dcda78387db480e7f815"
+            "url": "https://download.eeo.cn/client/classin_win_install_6.0.9.3131_x64.exe#/dl.7z",
+            "hash": "8ce697f7b2b7237a208cd12eaf5387042a2c276be6e4fc46cf4ce449db00c870"
         }
     },
     "pre_install": "Expand-7zipArchive \"$dir\\`$_1_\\app.dat\" \"$dir\"",
