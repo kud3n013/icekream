@@ -1,11 +1,11 @@
 {
     "$schema": "https://raw.githubusercontent.com/ScoopInstaller/Scoop/master/schema.json",
-    "version": "1.127.0",
+    "version": "1.128.0",
     "description": "Canva Desktop. Design platform for creating presentations, social media graphics, videos, and more.",
     "homepage": "https://www.canva.com",
     "license": "Proprietary",
-    "url": "https://desktop-release.canva.com/Canva%20Setup%201.127.0.exe#/dl.7z",
-    "hash": "c3a7015b71c600486d6e8ebff5cf3e26750dd4cbf7433ffbd6ded84fb9d21180",
+    "url": "https://desktop-release.canva.com/Canva%20Setup%201.128.0.exe#/dl.7z",
+    "hash": "3022ca4ccb1419a98bac7d5e02aebaf71d41b83e4ebe73382086a967f282f02c",
     "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
     "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$R0\" -Recurse -Force",
     "shortcuts": [
