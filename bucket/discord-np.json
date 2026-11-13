@@ -1,6 +1,6 @@
 {
     "$schema": "https://raw.githubusercontent.com/ScoopInstaller/Scoop/master/schema.json",
-    "version": "1.0.9267",
+    "version": "1.0.9268",
     "description": "Discord. All-in-one voice, video, and text chat service (non-portable installation).",
     "homepage": "https://discord.com",
     "license": {
@@ -9,8 +9,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://dl.discordapp.net/distro/app/stable/win/x64/1.0.9267/DiscordSetup.exe",
-            "hash": "8a12cb063b452e72dca041e32ccdc067f8200b293b89ca54f1083f13c7db8566"
+            "url": "https://dl.discordapp.net/distro/app/stable/win/x64/1.0.9268/DiscordSetup.exe",
+            "hash": "0ec04c6e5439bfc1032d0c133a252936833ce777bfc24eddb25e947020142315"
         }
     },
     "pre_install": "Set-Content -Path \"$dir\\discord.cmd\" -Value \"@echo off`r`nstart \"\"\"\" \"\"%LOCALAPPDATA%\\Discord\\Update.exe\"\" --processStart Discord.exe %*\"",
